@@ -15,7 +15,7 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toEqual({ data: 'hello from api!' });
+      expect(appController.getHello()).toEqual({ data: 'hello from api!!!' });
     });
   });
 });

@@ -6,6 +6,6 @@ export class AppController {
 
   @Get('/data')
   getHello() {
-    return { data: 'hello from api!' };
+    return { data: 'hello from api!!!' };
   }
 }
