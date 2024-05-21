@@ -30,6 +30,7 @@
     "start": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
