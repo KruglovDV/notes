@@ -1,0 +1,12 @@
+services:
+  server:
+    build:
+      ./server
+
+  client:
+    depends_on:
+      - server
+    build: ./client
+    ports:
+      - 80:80
+      - 443:443
