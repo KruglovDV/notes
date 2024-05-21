@@ -84,7 +84,7 @@ jobs:
     - name: Deploy
       uses: dawidd6/action-ansible-playbook@v2
       with:
-        playbook: deploy.yml
+        playbook: playbook.yml
         directory: ./
         key: ${{secrets.SSH_PRIVATE_KEY}}
         options: |
