@@ -1,0 +1,24 @@
+- name: "Create {{ app_path }}/"
+  file:
+    path: "{{ app_path }}/"
+    state: "directory"
+    owner: "user1"
+    group: "user1"
+    mode: 0775
+
+- name: "Copy docker-compose.yml"
+  copy:
+    src: "docker-compose.yml"
+    dest: "{{ app_path }}/docker-compose.yml"
+    owner: "user1"
+    group: "user1"
+    mode: 0644
+
+- name: "Stop services"
+  shell: docker compose -f {{ app_path }}/docker-compose.yml stop
+
+- name: "Pull images"
+  shell: docker compose -f {{ app_path }}/docker-compose.yml pull
+
+- name: "Start services"
+  shell: docker compose -f {{ app_path }}/docker-compose.yml up -d

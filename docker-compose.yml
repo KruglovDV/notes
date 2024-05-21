@@ -1,12 +1,11 @@
 services:
   server:
-    build:
-      ./server
+    image: dmitrykruglov/notes.server:latest
 
   client:
     depends_on:
       - server
-    build: ./client
+    image: dmitrykruglov/notes.client:latest
     ports:
       - 80:80
       - 443:443

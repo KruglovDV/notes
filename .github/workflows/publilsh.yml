@@ -75,3 +75,15 @@ jobs:
           context: client/
           push: true
           tags: dmitrykruglov/notes.client:latest
+  deploy:
+    needs: [build-server, build-client]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy
+      uses: dawidd6/action-ansible-playbook@v2
+      with:
+        playbook: deploy.yml
+        directory: ./
+        key: ${{secrets.SSH_PRIVATE_KEY}}
+        options: |
+          --verbose
