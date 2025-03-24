@@ -5,7 +5,8 @@ export class AppController {
   constructor() {}
 
   @Get('/data')
-  getHello() {
-    return { data: 'hello from api!!!' };
+  getCurrentDate() {
+    const date = new Date().toLocaleDateString('ru-RU');
+    return { data: date };
   }
 }

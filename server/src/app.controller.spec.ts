@@ -4,6 +4,15 @@ import { AppController } from './app.controller';
 describe('AppController', () => {
   let appController: AppController;
 
+  beforeAll(() => {
+    jest.useFakeTimers();
+    jest.setSystemTime(new Date('2024-01-01'));
+  });
+
+  afterAll(() => {
+    jest.useRealTimers();
+  });
+
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [AppController],
@@ -14,8 +23,8 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toEqual({ data: 'hello from api!!!' });
+    it('should return date', () => {
+      expect(appController.getCurrentDate()).toEqual({ data: '01.01.2024' });
     });
   });
 });
