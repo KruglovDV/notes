@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div>
-      <div>Math app</div>
+      <div>Test app for monitoring</div>
       {data && <div data-testid="app-text">{data}</div>}
     </div>
   );
