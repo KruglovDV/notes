@@ -1,6 +1,8 @@
 services:
   server:
     image: dmitrykruglov/notes.server:latest
+    ports:
+      - 3000:3000
 
   client:
     depends_on:
